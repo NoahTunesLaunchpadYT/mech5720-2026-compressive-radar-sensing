@@ -1,0 +1,165 @@
+{
+ "offset_mm": -0.4320550520324083,
+ "latency_ms": 121.99500432537948,
+ "backlash_mm": -0.02011466926162875,
+ "fitted": [
+  "offset",
+  "latency",
+  "backlash"
+ ],
+ "note": "",
+ "rms_before_mm": 1.084703209302182,
+ "rms_after_mm": 0.8051568044564494,
+ "frames": 7436,
+ "match": "complex",
+ "range_mm": [
+  20.0,
+  2000.0
+ ],
+ "sweeps": [
+  {
+   "name": "sweep_back_6",
+   "speed_mm_s": 6.0,
+   "direction": "back",
+   "frames": 261,
+   "mean_error_mm": -0.6679525177191407,
+   "rms_after_mm": 0.5558395476461969,
+   "rms_picks_mm": 0.5539628221197826,
+   "frames_beyond_skip_threshold": 5
+  },
+  {
+   "name": "sweep_out_6",
+   "speed_mm_s": 6.0,
+   "direction": "out",
+   "frames": 209,
+   "mean_error_mm": 0.5811751144265691,
+   "rms_after_mm": 0.48419512768120293,
+   "rms_picks_mm": 0.47563901748873993,
+   "frames_beyond_skip_threshold": 1
+  },
+  {
+   "name": "sweep_back_2",
+   "speed_mm_s": 2.0,
+   "direction": "back",
+   "frames": 1142,
+   "mean_error_mm": -0.26629731211190844,
+   "rms_after_mm": 0.5431965526611596,
+   "rms_picks_mm": 0.5522932685755536,
+   "frames_beyond_skip_threshold": 3
+  },
+  {
+   "name": "sweep_out_2",
+   "speed_mm_s": 2.0,
+   "direction": "out",
+   "frames": 1149,
+   "mean_error_mm": 0.22672147932301195,
+   "rms_after_mm": 0.566224083678007,
+   "rms_picks_mm": 0.6029500706538738,
+   "frames_beyond_skip_threshold": 6
+  },
+  {
+   "name": "sweep_out_4",
+   "speed_mm_s": 4.0,
+   "direction": "out",
+   "frames": 577,
+   "mean_error_mm": -0.34120463132404777,
+   "rms_after_mm": 0.7366470246494988,
+   "rms_picks_mm": 0.7052656785924376,
+   "frames_beyond_skip_threshold": 37
+  },
+  {
+   "name": "sweep_back_4",
+   "speed_mm_s": 4.0,
+   "direction": "back",
+   "frames": 584,
+   "mean_error_mm": -1.4647242336929134,
+   "rms_after_mm": 0.8738381111943079,
+   "rms_picks_mm": 0.9500984541328739,
+   "frames_beyond_skip_threshold": 45
+  },
+  {
+   "name": "sweep_out_3",
+   "speed_mm_s": 3.0,
+   "direction": "out",
+   "frames": 770,
+   "mean_error_mm": -1.0333540770364096,
+   "rms_after_mm": 1.2232149538159385,
+   "rms_picks_mm": 1.2556941465488813,
+   "frames_beyond_skip_threshold": 97
+  },
+  {
+   "name": "sweep_back_3",
+   "speed_mm_s": 3.0,
+   "direction": "back",
+   "frames": 774,
+   "mean_error_mm": -1.696778037120648,
+   "rms_after_mm": 1.1068208487863518,
+   "rms_picks_mm": 1.1727752994088627,
+   "frames_beyond_skip_threshold": 74
+  },
+  {
+   "name": "sweep_out_5",
+   "speed_mm_s": 5.0,
+   "direction": "out",
+   "frames": 478,
+   "mean_error_mm": 0.6215268506678373,
+   "rms_after_mm": 0.7324706553672763,
+   "rms_picks_mm": 0.7399862996755784,
+   "frames_beyond_skip_threshold": 17
+  },
+  {
+   "name": "sweep_back_5",
+   "speed_mm_s": 5.0,
+   "direction": "back",
+   "frames": 473,
+   "mean_error_mm": -0.6963486867504082,
+   "rms_after_mm": 0.6336448217727517,
+   "rms_picks_mm": 0.6398544326245711,
+   "frames_beyond_skip_threshold": 12
+  },
+  {
+   "name": "sweep_out_8",
+   "speed_mm_s": 8.0,
+   "direction": "out",
+   "frames": 297,
+   "mean_error_mm": 0.9227878456209327,
+   "rms_after_mm": 0.6695785565984297,
+   "rms_picks_mm": 0.6647381459625565,
+   "frames_beyond_skip_threshold": 8
+  },
+  {
+   "name": "sweep_back_8",
+   "speed_mm_s": 8.0,
+   "direction": "back",
+   "frames": 294,
+   "mean_error_mm": -1.0546526052304837,
+   "rms_after_mm": 0.6916873810700138,
+   "rms_picks_mm": 0.6288710963123598,
+   "frames_beyond_skip_threshold": 18
+  },
+  {
+   "name": "sweep_out_10",
+   "speed_mm_s": 10.0,
+   "direction": "out",
+   "frames": 217,
+   "mean_error_mm": 1.223278950793175,
+   "rms_after_mm": 0.997283478509397,
+   "rms_picks_mm": 1.0107694850878364,
+   "frames_beyond_skip_threshold": 40
+  },
+  {
+   "name": "sweep_back_10",
+   "speed_mm_s": 10.0,
+   "direction": "back",
+   "frames": 211,
+   "mean_error_mm": -1.1926395263563048,
+   "rms_after_mm": 0.949572969855408,
+   "rms_picks_mm": 0.9373346790405815,
+   "frames_beyond_skip_threshold": 46
+  }
+ ],
+ "skip_threshold_mm": 2.0,
+ "test": "test2",
+ "time": "2026-10-31 14:23:05",
+ "usage": "position_mm = telemetry_mm - (offset_mm + v_mm_per_s * latency_ms / 1000 + backlash_mm * moving_towards_switch)"
+}

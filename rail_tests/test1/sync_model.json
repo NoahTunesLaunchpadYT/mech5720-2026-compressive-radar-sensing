@@ -1,0 +1,96 @@
+{
+ "offset_mm": -0.20241732950418656,
+ "latency_ms": 310.77110033295884,
+ "backlash_mm": 0.13108424497273652,
+ "fitted": [
+  "offset",
+  "latency",
+  "backlash"
+ ],
+ "note": "",
+ "rms_before_mm": 0.6618346739750427,
+ "rms_after_mm": 0.4576092708395473,
+ "frames": 6378,
+ "match": "complex",
+ "range_mm": [
+  200.0,
+  2000.0
+ ],
+ "sweeps": [
+  {
+   "name": "sweep_out_1",
+   "speed_mm_s": 1.0,
+   "direction": "out",
+   "frames": 2353,
+   "mean_error_mm": 0.19410560499852697,
+   "rms_after_mm": 0.44162257404915467,
+   "rms_picks_mm": 0.441357686144717
+  },
+  {
+   "name": "sweep_out_3",
+   "speed_mm_s": 3.0,
+   "direction": "out",
+   "frames": 802,
+   "mean_error_mm": 0.4106338220038379,
+   "rms_after_mm": 0.4869506530530589,
+   "rms_picks_mm": 0.4944762961805704
+  },
+  {
+   "name": "sweep_back_1",
+   "speed_mm_s": 1.0,
+   "direction": "back",
+   "frames": 2408,
+   "mean_error_mm": -0.2928085110797899,
+   "rms_after_mm": 0.4766013514683141,
+   "rms_picks_mm": 0.4818268957665513
+  },
+  {
+   "name": "sweep_back_3",
+   "speed_mm_s": 3.0,
+   "direction": "back",
+   "frames": 813,
+   "mean_error_mm": -1.1995328753236505,
+   "rms_after_mm": 0.41350872437767694,
+   "rms_picks_mm": 0.4152607041357611
+  },
+  {
+   "name": "sweep_out_5",
+   "speed_mm_s": 5.0,
+   "direction": "out",
+   "frames": 1,
+   "mean_error_mm": 0.5903369013730986,
+   "rms_after_mm": 0.6061602468910041,
+   "rms_picks_mm": 0.6061602468910041
+  },
+  {
+   "name": "sweep_back_5",
+   "speed_mm_s": 5.0,
+   "direction": "back",
+   "frames": 1,
+   "mean_error_mm": -1.0716086607490922,
+   "rms_after_mm": 0.39872657874215167,
+   "rms_picks_mm": 0.39872657874215167
+  },
+  {
+   "name": "sweep_out_8",
+   "speed_mm_s": 8.0,
+   "direction": "out",
+   "frames": 0,
+   "mean_error_mm": NaN,
+   "rms_after_mm": NaN,
+   "rms_picks_mm": NaN
+  },
+  {
+   "name": "sweep_back_8",
+   "speed_mm_s": 8.0,
+   "direction": "back",
+   "frames": 0,
+   "mean_error_mm": NaN,
+   "rms_after_mm": NaN,
+   "rms_picks_mm": NaN
+  }
+ ],
+ "test": "test1",
+ "time": "2026-10-31 11:14:04",
+ "usage": "position_mm = telemetry_mm - (offset_mm + v_mm_per_s * latency_ms / 1000 + backlash_mm * moving_towards_switch)"
+}

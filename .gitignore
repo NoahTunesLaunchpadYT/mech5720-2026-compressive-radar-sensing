@@ -1,3 +1,6 @@
 __pycache__/
 .venv/
 captures/
+mask_captures/
+settings.json
+.settings.json

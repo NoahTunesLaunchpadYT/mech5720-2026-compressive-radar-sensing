@@ -1,0 +1,65 @@
+{
+ "offset_mm": -0.030938306145973017,
+ "latency_ms": 125.8808375199548,
+ "backlash_mm": 0.07596410978285267,
+ "fitted": [
+  "offset",
+  "latency",
+  "backlash"
+ ],
+ "note": "",
+ "rms_before_mm": 1.1684617010749558,
+ "rms_after_mm": 0.42114362565960695,
+ "frames": 1080,
+ "match": "complex",
+ "range_mm": [
+  20.0,
+  2000.0
+ ],
+ "sweeps": [
+  {
+   "name": "sweep_back_10",
+   "speed_mm_s": 10.0,
+   "direction": "back",
+   "frames": 240,
+   "mean_error_mm": -1.228998387710924,
+   "rms_after_mm": 0.4115974181917797,
+   "rms_picks_mm": 0.4025098260162755,
+   "frames_beyond_skip_threshold": 6
+  },
+  {
+   "name": "sweep_out_10",
+   "speed_mm_s": 10.0,
+   "direction": "out",
+   "frames": 243,
+   "mean_error_mm": 1.2133523346496253,
+   "rms_after_mm": 0.4515591026596758,
+   "rms_picks_mm": 0.392131360355881,
+   "frames_beyond_skip_threshold": 2
+  },
+  {
+   "name": "sweep_back_8",
+   "speed_mm_s": 8.0,
+   "direction": "back",
+   "frames": 295,
+   "mean_error_mm": -0.9513848796061296,
+   "rms_after_mm": 0.44741170147756176,
+   "rms_picks_mm": 0.5107641052045391,
+   "frames_beyond_skip_threshold": 10
+  },
+  {
+   "name": "sweep_out_8",
+   "speed_mm_s": 8.0,
+   "direction": "out",
+   "frames": 302,
+   "mean_error_mm": 0.9895645338057377,
+   "rms_after_mm": 0.374212532666204,
+   "rms_picks_mm": 0.3344608174729799,
+   "frames_beyond_skip_threshold": 2
+  }
+ ],
+ "skip_threshold_mm": 2.0,
+ "test": "fast",
+ "time": "2026-10-31 14:41:08",
+ "usage": "position_mm = telemetry_mm - (offset_mm + v_mm_per_s * latency_ms / 1000 + backlash_mm * moving_towards_switch)"
+}
