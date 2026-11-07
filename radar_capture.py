@@ -183,7 +183,7 @@ CALIBRATE_TO_MASK = 23   # where Calibrate leaves the carriage
 
 # Mask pattern: 4 rows x 27 columns; mask m (0..23) is columns m .. m+3.
 # MASK_REVERSED: carriage position 1 (nearest the switch) shows the last mask.
-MASK = np.loadtxt(Path(__file__).parent / "mask_patterns" / "mask_pattern.csv",
+MASK = np.loadtxt(Path(__file__).parent / "mask_patterns" / "mask_impulse.csv",
                   delimiter=",", dtype=int)
 MASK_REVERSED = True
 MASK_ON = "#7fd4ff"      # 1s: light blue
