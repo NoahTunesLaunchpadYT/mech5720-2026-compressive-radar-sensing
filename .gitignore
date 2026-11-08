@@ -4,3 +4,10 @@ captures/
 mask_captures/
 settings.json
 .settings.json
+/coded_aperture_sim/outputs/
+/coded_aperture_sim/preview_queues/
+/coded_aperture_sim/previews/
+/coded_aperture_sim/runs/
+/coded_aperture_sim/runs_lowres/
+/coded_aperture_sim/small_end_to_end/
+/coded_aperture_sim/smoke_fixture/

@@ -1,0 +1,29 @@
+{
+  "frequency_ghz": 60.5,
+  "source_to_plate_mm": 41.9,
+  "plate_size_mm": [100, 100],
+  "opening_size_mm": [26.5, 26.5],
+  "plate_thickness_mm": 2,
+  "gap_mm": 3,
+  "mask_size_mm": [200, 43],
+  "mask_thickness_mm": 3,
+  "pitch_mm": 7.6,
+  "mask_rows": ["1011", "1010", "0000", "0111"],
+  "volume_size_mm": [900, 900, 1500],
+  "preview_depths_mm": [50, 250, 500, 1500],
+  "volume_step_mm": 2,
+  "capture_size_mm": [900, 900],
+  "capture_step_mm": 1.0,
+  "handoff_mm": 5,
+  "mesh_max_mm": 0.8,
+  "mesh_detail_mm": 0.5,
+  "memory_limit_gib": 24,
+  "padding": 4,
+  "enclosure": {
+    "center_xy_mm": [0, -10],
+    "wall_thickness_mm": 2,
+    "cavity_depth_mm": 45,
+    "backplate_thickness_mm": 1.5
+  }
+}
+

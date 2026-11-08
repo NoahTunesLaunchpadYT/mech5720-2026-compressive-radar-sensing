@@ -1,15 +1,15 @@
 """
-Arrow-key jog control for the stepper sketch.
+Arrow-key step control for the stepper sketch.
 
-  Left / Right arrow (hold) -> move the carriage
-  Space                     -> stop
+  Left / Right arrow press -> queue one 7 mm move; holding never repeats
+  Space                    -> stop and clear all queued moves
   The window also shows distance from the limit switch, the voltage on A5,
   and homing / emergency-stop messages from the Arduino.
 
 Setup:
   pip install pyserial
-  python jog_keys.py            (auto-detects the Arduino)
-  python jog_keys.py COM3       (or name the port: COM3, /dev/ttyACM0, /dev/cu.usbmodem...)
+  python main.py            (auto-detects the Arduino)
+  python main.py COM3       (or name the port: COM3, /dev/ttyACM0, /dev/cu.usbmodem...)
 
 Notes:
   - Close the Arduino Serial Monitor / Plotter first; only one program can use the port.
@@ -42,7 +42,7 @@ def find_port():
     if len(ports) == 1:
         return ports[0].device
     names = ", ".join(p.device for p in ports) or "none found"
-    sys.exit(f"Couldn't identify the Arduino. Run: python jog_keys.py <port>\nPorts: {names}")
+    sys.exit(f"Couldn't identify the Arduino. Run: python main.py <port>\nPorts: {names}")
 
 
 class JogApp:
@@ -55,16 +55,16 @@ class JogApp:
         self.message = "Connecting..."
         self.running = True
 
-        root.title("Stepper Jog")
+        root.title("Stepper Steps")
         root.geometry("360x260")
         font_big = ("Helvetica", 58, "bold")
         font_mid = ("Helvetica", 36)
 
-        self.lbl_state = tk.Label(root, text="STOPPED", font=font_mid)
+        self.lbl_state = tk.Label(root, text="7 mm / press", font=font_mid)
         self.lbl_dist = tk.Label(root, text="-- mm", font=font_big)
         self.lbl_volt = tk.Label(root, text="-- V", font=font_mid)
         self.lbl_msg = tk.Label(root, text="", font=("Helvetica", 12), fg="#b00")
-        self.lbl_help = tk.Label(root, text="Hold ← / → to move   ·   Space to stop",
+        self.lbl_help = tk.Label(root, text="Tap ← / →: 7 mm · Space: stop + clear",
                                  font=("Helvetica", 11), fg="#666")
         for w in (self.lbl_state, self.lbl_dist, self.lbl_volt, self.lbl_msg, self.lbl_help):
             w.pack(pady=4)
@@ -88,7 +88,8 @@ class JogApp:
             self.root.after_cancel(job)
         if key not in self.held:
             self.held.add(key)
-            self.send_command()  # respond immediately, don't wait for the next tick
+            forward = (key == "Left") == LEFT_IS_FORWARD
+            self.send_command("F" if forward else "B")  # one command per distinct press
 
     def on_release(self, event):
         # Linux sends release+press pairs while a key auto-repeats; wait briefly
@@ -99,23 +100,13 @@ class JogApp:
     def finish_release(self, key):
         self.release_jobs.pop(key, None)
         self.held.discard(key)
-        self.send_command()
 
     def stop_all(self, event=None):
-        self.held.clear()
-        self.send_command()
+        # Keep held keys latched so auto-repeat cannot restart motion after Space.
+        self.send_command("S")
 
     # ---- Serial out ----
-    def current_command(self):
-        left, right = "Left" in self.held, "Right" in self.held
-        if left == right:
-            return "S", "STOPPED"
-        if left:
-            return ("F" if LEFT_IS_FORWARD else "B"), "◀  MOVING LEFT"
-        return ("B" if LEFT_IS_FORWARD else "F"), "MOVING RIGHT  ▶"
-
-    def send_command(self):
-        cmd, _ = self.current_command()
+    def send_command(self, cmd):
         try:
             self.ser.write(cmd.encode())
         except serial.SerialException:
@@ -124,9 +115,7 @@ class JogApp:
     def tick(self):
         if not self.running:
             return
-        self.send_command()  # keep-alive
-        _, state_text = self.current_command()
-        self.lbl_state.config(text=state_text)
+        self.send_command("H")  # keep-alive; never queues movement
         if "Distance_mm" in self.latest:
             self.lbl_dist.config(text=f"{self.latest['Distance_mm']:.2f} mm")
         if "Voltage" in self.latest:
